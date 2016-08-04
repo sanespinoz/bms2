@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <!-- Head -->
+    <link rel="stylesheet" href="../bower_components/lumx/dist/lumx.css">
+<link rel="stylesheet" href="../bower_components/mdi/css/materialdesignicons.css">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+</head>
+<body ng-app="dreamsApp" ng-controller="pisoCtrl">
+    
+
+
+  <!-- Dreams Section -->
+        
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1">
+                    <nav>
+                     <!--   <ul class="pager">
+                            <li ng-show="previous" class="previous "><a ng-click="paginate('previous')" class="page-scroll" href="#dreams"><< Previous</a></li>
+                            <li ng-show="next" class="next"><a ng-click="paginate('next')" class="page-scroll" href="#dreams">Next >></a></li>
+                        </ul>-->
+                    </nav>
+                    <div ng-repeat="piso in data" class="cadre">
+                        <h2>
+                           Piso
+                        </h2>
+                        <p>{{ piso.nombre}}</p>  
+                        <p>{{ piso.descripcion}}</p>                        
+                        <h2>
+                           <!--<div ng-if="dream.is_owner">-->
+                                <a ng-click="edit(piso.id, $index)" href>
+                                    <span class="fa fa-fw fa-pencil"></span>
+                                </a>
+                                <a ng-click="destroy(piso.id)" href="#">
+                                    <span class="fa fa-fw fa-trash"></span>
+                                </a>
+                           <!--</div>-->
+                        </h2>
+                    </div>
+                    <!--<nav>
+                        <ul class="pager">
+                            <li ng-show="previous" class="previous"><a ng-click="paginate('previous')" class="page-scroll" href="#dreams"><< Previous</a></li>
+                            <li ng-show="next" class="next"><a ng-click="paginate('next')" class="page-scroll" href="#dreams">Next >></a></li>
+                        </ul>
+                    </nav>-->
+                </div>
+            </div>
+
+
+                <!-- Before body closing tag -->
+
+<script src="../bower_components/velocity/velocity.js"></script>
+<script src="../bower_components/moment/min/moment-with-locales.js"></script>
+<script src="../bower_components/angular/angular.js"></script>
+<script src="../bower_components/lumx/dist/lumx.js"></script>
+
+</body>
+</html>
+
+
+
+
+pisos_list
+
+<body ng-app="dreamsApp" ng-controller="PisoCtrl">
+    
+
+
+<div class="data-table-container">
+    <header class="data-table-header">
+        <div class="data-table-header__label">
+            <span class="fs-title">Pisos</span>
+        </div>
+ 
+       
+    </header>
+ 
+    <table class="data-table">
+        <thead>
+          
+               <tr>
+                <th>Nombre</th>
+              
+                <th>
+                    <i class="mdi mdi-comment-text"></i>
+                    <span>Descripción</span>
+                </th>
+                <th>
+                    <i class="mdi mdi-comment-text"></i>
+                    <span>Operaciones</span>
+                </th>
+           </tr>
+        </thead>
+ 
+        <tbody>
+          <tr class= "data-table__selectable-row" ng-repeat= "piso in data">
+               
+                <td>{{piso.nombre}}</td>
+                <td>{{piso.descripcion}}</td>
+               <td>
+                
+
+<div class="p+">
+ 
+ <!--<button class="btn btn--m btn--raised bgc-indigo-50 tc-indigo-900" lx-ripple="indigo-500">Editar</button>-->
+      <a ng-click="edit(piso.id)"  href>
+                                    <span class="fa fa-fw fa-pencil"></span>
+                                </a>
+                                <a ng-click="destroy(piso.id)" href="#">
+                                    <span class="fa fa-fw fa-trash"></span>
+                                </a>
+</div>
+
+
+
+
+
+
+               </td>
+            </tr>
+ 
+       
+        </tbody>
+    </table>
+</div>

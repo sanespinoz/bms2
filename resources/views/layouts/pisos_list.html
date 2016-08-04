@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<!-- Head -->
+	<link rel="stylesheet" href="../bower_components/lumx/dist/lumx.css">
+<link rel="stylesheet" href="../bower_components/mdi/css/materialdesignicons.css">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+</head>
+<body ng-app="dreamsApp" ng-controller="PisoCtrl">
+    
+
+
+<div class="data-table-container">
+    <header class="data-table-header">
+        <div class="data-table-header__label">
+            <span class="fs-title">Pisos</span>
+        </div>
+ 
+       
+    </header>
+ 
+    <table class="data-table">
+        <thead>
+          
+               <tr>
+                <th>Nombre</th>
+              
+                <th>
+                    <i class="mdi mdi-comment-text"></i>
+                    <span>Descripción</span>
+                </th>
+                <th>
+                    <i class="mdi mdi-comment-text"></i>
+                    <span>Operaciones</span>
+                </th>
+           </tr>
+        </thead>
+ 
+        <tbody>
+          <tr class= "data-table__selectable-row" ng-repeat= "piso in data">
+               
+                <td>{{piso.nombre}}</td>
+                <td>{{piso.descripcion}}</td>
+               <td>
+                
+
+<div class="p+">
+ 
+ <!--<button class="btn btn--m btn--raised bgc-indigo-50 tc-indigo-900" lx-ripple="indigo-500">Editar</button>-->
+      <a ng-click="edit(piso.id, $index)"  href>
+                                    <span class="fa fa-fw fa-pencil"></span>
+                                </a>
+                                <a ng-click="destroy(piso.id)" href>
+                                    <span class="fa fa-fw fa-trash"></span>
+                                </a>
+</div>
+</td>
+    </tr>
+    </tbody>
+    </table>
+</div>
+   
+     <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Cambia la descripción...</h4>
+                    </div>
+                    <div class="modal-body">
+
+                        <form ng-submit="submitChange()" accept-charset="UTF-8" role="form">
+                            <div class="row">
+
+                              <div class="form-group col-lg-12" ng-class="{'has-error': errorNombre}"></div>
+                                        
+                                        <input type="text" ng-model="nombre" class="form-control" name="nombre" id="nombre" required><small class="help-block">{{ errorNombre }}</small>
+
+                                    <div class="form-group col-lg-12" ng-class="{'has-error': errorDescripcion}"></div>    
+                                    <textarea rows="8" ng-model="descripcion" class="form-control" name="descripcion" id="descripcion" required></textarea>
+                                    <small class="help-block">{{ errorDescripcion}}</small>
+                                </div>
+
+                                <div class="form-group col-lg-12 text-center">                        
+                                    <button type="button" class="btn btn-default"type="submit"  data-dismiss="modal">Cerrar</button>
+                                    <input class="btn btn-default" type="submit" value="Guardar">
+                                </div> 
+
+                          
+                        </form>                         
+
+                    </div>
+            
+            </div>
+        </div>
+  </div>     
+
+	<!-- Before body closing tag -->
+ 
+<script src="../bower_components/velocity/velocity.js"></script>
+
+<script src="../bower_components/angular/angular.js"></script>
+<script src="../bower_components/lumx/dist/lumx.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+
