@@ -35,7 +35,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href='/'>Inicio</a>
+                <a class="navbar-brand" href='/bms2/public/'>Inicio</a>
             </div>
            
 
