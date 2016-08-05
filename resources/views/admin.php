@@ -153,6 +153,8 @@
     <script src="js/app.js"></script>         
     <script src="js/controllers.js"></script> 
     <script src="js/services.js"></script>
+<!--Internacionalizacion -->
+    <script src="http://code.angularjs.org/1.2.9/i18n/angular-locale_es-cr.js"></script>
    
   
 </body>
