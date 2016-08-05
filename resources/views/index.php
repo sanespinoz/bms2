@@ -89,69 +89,10 @@
         <!-- Dreams Section -->
         <section id="dreams" class="container content-section text-center">
             <div class="row">
-                <div class="col-lg-10 col-lg-offset-1">
-                    <nav>
-                        <ul class="pager">
-                            <li ng-show="previous" class="previous "><a ng-click="paginate('previous')" class="page-scroll" href="#dreams"><< Previous</a></li>
-                            <li ng-show="next" class="next"><a ng-click="paginate('next')" class="page-scroll" href="#dreams">Next >></a></li>
-                        </ul>
-                    </nav>
-                    <div ng-repeat="dream in data" class="cadre">
-                        <h2>
-                            Dream of {{ dream.user.name}}
-                        </h2>
-                        <p>{{ dream.content}}</p>                        
-                        <h2>
-                            <div ng-if="dream.is_owner">
-                                <a ng-click="edit(dream.id, $index)" href>
-                                    <span class="fa fa-fw fa-pencil"></span>
-                                </a>
-                                <a ng-click="destroy(dream.id)" href="#dreams">
-                                    <span class="fa fa-fw fa-trash"></span>
-                                </a>
-                            </div>
-                        </h2>
-                    </div>
-                    <nav>
-                        <ul class="pager">
-                            <li ng-show="previous" class="previous"><a ng-click="paginate('previous')" class="page-scroll" href="#dreams"><< Previous</a></li>
-                            <li ng-show="next" class="next"><a ng-click="paginate('next')" class="page-scroll" href="#dreams">Next >></a></li>
-                        </ul>
-                    </nav>
-                </div>
+              
             </div>
         </section>
 
-        <!-- Modal -->
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel">Change your dream...</h4>
-                    </div>
-                    <div class="modal-body">
-
-                        <form ng-submit="submitChange()" accept-charset="UTF-8" role="form">
-                            <div class="row">
-
-                                <div class="form-group col-lg-12" ng-class="{'has-error': errorContent}">
-                                    <textarea rows="8" ng-model="content" class="form-control" name="content" id="content" required></textarea>
-                                    <small class="help-block">{{ errorContent}}</small>
-                                </div>
-
-                                <div class="form-group col-lg-12 text-center">                        
-                                    <button type="button" class="btn btn-default"type="submit"  data-dismiss="modal">Close</button>
-                                    <input class="btn btn-default" type="submit" value="Save changes">
-                                </div> 
-
-                            </div>
-                        </form>                         
-
-                    </div>
-                </div>
-            </div>
-        </div>
 
         <!-- Auth Section -->
         <section id="auth" class="content-section">
@@ -162,38 +103,38 @@
                             <h2 class="text-center">Login</h2>
                             <form ng-controller="LoginCtrl" ng-submit="submit()" accept-charset="UTF-8" role="form">
                                 <div ng-show="isAlert" class="alert alert-danger" role="alert">
-                                    These credentials do not match our records.
+                                    Estas credenciales no están registradas.
                                 </div>                              
                                 <div class="row">
 
                                     <div class="form-group col-lg-6" ng-class="{'has-error': errorEmail}">
-                                        <input ng-model="formData.email" class="form-control" placeholder="email" name="email" type="email" id="email" required>
+                                        <input ng-model="formData.email" class="form-control" placeholder="correo electrónico" name="email" type="email" id="email" required>
                                         <small class="help-block">{{ errorEmail}}</small>
                                     </div>
 
                                     <div class="form-group col-lg-6" ng-class="{'has-error': errorPassword}">
-                                        <input ng-model="formData.password" class="form-control" placeholder="password" name="password" type="password" value="" id="password" required>
+                                        <input ng-model="formData.password" class="form-control" placeholder="contraseña" name="password" type="password" value="" id="password" required>
                                         <small class="help-block">{{ errorPassword}}</small>
                                     </div>
 
                                     <div class="checkbox col-lg-12">
                                         <label>
-                                            <input ng-model="formData.memory" name="memory" type="checkbox" value="1">Remember me
+                                            <input ng-model="formData.memory" name="memory" type="checkbox" value="1">Recuerdame
                                         </label>
                                     </div>
 
                                     <div class="form-group col-lg-12 text-center">
-                                        <input class="btn btn-default" type="submit" value="Send">
+                                        <input class="btn btn-default" type="submit" value="Enviar">
                                     </div>    
 
                                     <div class="col-lg-12 text-center">                 
-                                        <a href="password/email">I have forgoten my password !</a>
+                                        <a href="password/email">Olvide mi contraseña !</a>
                                     </div>
                                 </div>
                             </form>                        
                             <div class="text-center">
                                 <br>
-                                <a href="auth/register" class="btn btn-default">I want to suscribe !</a>
+                                <a href="auth/register" class="btn btn-default">Deseo suscribirme !</a>
                             </div>
                         </div>
 
@@ -221,10 +162,10 @@
  
     <script src="assets/js/metisMenu.min.js"></script>
   <!-- Plugin JavaScript -->
-        <script src="js/jquery.easing.min.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
 
         <!-- Custom Theme JavaScript -->
-        <script src="js/grayscale.js"></script>
+    <script src="js/grayscale.js"></script>
    
     <script src="https://raw.githubusercontent.com/Eonasdan/bootstrap-datetimepicker/master/build/js/bootstrap-datetimepicker.min.js"></script>
 
@@ -237,12 +178,12 @@
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-resource.min.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-cookies.min.js"></script>
 <!-- Custom Angular JavaScript -->
-    <script src="js/app.js"></script>         
-    <script src="js/controllers.js"></script> 
-    <script src="js/services.js"></script>
-    <!--Internacionalizacion -->
-    <script src="http://code.angularjs.org/1.2.9/i18n/angular-locale_es-cr.js"></script>
-    </body>
+  <script src="js/app.js"></script>         
+  <script src="js/controllers.js"></script> 
+  <script src="js/services.js"></script>
+<!--Internacionalizacion -->
+  <script src="http://code.angularjs.org/1.2.9/i18n/angular-locale_es-cr.js"></script>
+  </body>
 
 </html>
 
