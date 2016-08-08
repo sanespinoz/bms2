@@ -2,7 +2,7 @@
 
 /* App Module */
 
-var dreamsApp = angular.module('dreamsApp', ['ngRoute','lumx',
+var dreamsApp = angular.module('dreamsApp', ['ngRoute',
     'dreamsControllers',
     'dreamsServices'
     

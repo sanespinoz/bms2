@@ -5,7 +5,7 @@
 
 var dreamsControllers = angular.module('dreamsControllers', []);
 
-dreamsControllers.controller('AppCtrl', ['$scope', 'Log', 'Logout', 'Dream',
+dreamsControllers.controller('AppCtrl', ['$scope', 'Log', 'Logout',
     function AppCtrl($scope, Log, Logout, Dream) {
 
         // Variables
@@ -201,7 +201,7 @@ dreamsControllers.controller("pisoCtrl", function pisoCtrl($scope, $http, Piso) 
           
             $("#myModal").modal();
         };
-        /* Update Piso*/
+          /* Update Piso*/
         $scope.submitChange = function () {
             $scope.errorNombre = null;
             $scope.errorDescripcion = null;
@@ -258,6 +258,60 @@ dreamsControllers.controller("pisoCtrl", function pisoCtrl($scope, $http, Piso) 
  dreamsControllers.controller('PisoDetailCtrl', ['$routeParams',
   function($routeParams) {
     this.pisoId = $routeParams.pisoId;
-  }]);
+}]);
+     /*            
+ Delete Piso
+           
+
+*/
+
+
+        /*
+           $scope.destroy = function(id) {
+     
+                if (confirm("Desea eliminar el piso ?"))
+            {
+        // use the function we created in our service
+                    Piso.delete(id,
+                        function success(data) {
+
+                // if successful, we'll need to refresh the piso list
+                $scope.get();
+        //console.log("res:",data);
+                      },
+                    function error(errorResponse) {
+                        console.log("Error:" + JSON.stringify(errorResponse));
+                    }
+                );
+            }
+        };
+/////////////////
+ $scope.eliminar = function() {
+                     $("#myModaldelete").modal();
+                    
+            };
+       $scope.destroy = function(id) {
+     
+                if (confirm("Desea eliminar el piso?"))
+            {
+        // use the function we created in our service
+                    Piso.delete(id,
+                        function success(data) {
+
+                // if successful, we'll need to refresh the piso list
+                $scope.get();
+        //console.log("res:",data);
+                      },
+                    function error(errorResponse) {
+                        console.log("Error:" + JSON.stringify(errorResponse));
+                    }
+                );
+            }
+        };
+         */
+
+
+
+
 
 

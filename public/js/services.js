@@ -25,16 +25,7 @@ dreamsServices.factory('Logout', ['$resource',
         });
     }]);
 
-dreamsServices.factory('Dream', ['$resource',
-    function ($resource) {
-        return $resource("dream/:id", {page: '@page'}, {
-           
-            get: {method: 'GET'},
-            save: {method: 'POST'},
-            delete: {method: 'DELETE'},
-            update: {method: 'PUT'}
-        });
-    }]);
+
 
 dreamsServices.factory('Piso',function($http) {
 
@@ -60,7 +51,7 @@ dreamsServices.factory('Piso',function($http) {
              return $http.put('pisos/' + id,{nombre, descripcion});      
         }
     }
-    });
+});
 
 
 

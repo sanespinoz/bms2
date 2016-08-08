@@ -11,8 +11,6 @@
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="assets/css/metisMenu.min.css" rel="stylesheet" type="text/css">
 
-<link rel="stylesheet" href="../bower_components/lumx/dist/lumx.css" type="text/css">
-<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
         <!-- Custom CSS -->
     <link href="assets/css/sb-admin-2.css" rel="stylesheet" type="text/css">
 
@@ -56,62 +54,65 @@
                      <ul class="nav" id="side-menu">
                         
                         <li>
-                            <a href="#"><i class="fa fa-users fa-fw"></i> Piso<span class="fa arrow"></span></a>
+                            <a href="#"><i class='fa fa-building fa-fw'></i> Piso<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                            
                                 <li>
 
-                                    <a href="#create"><i class='fa fa-plus fa-fw'></i> Agregar</a>
+                                    <a href="#create"><i class='fa fa-pencil fa-fw'></i> Agregar</a>
                                 
                                 </li>
                                 <li>
-                                    <a href="#list"><i class='fa fa-list-ol fa-fw'></i> Pisos</a>
+                                    <a href="#list"><i class='fa fa-list fa-fw'></i> Pisos</a>
                                 </li>
                             </ul>
                         </li>
 
                         <li>
-                            <a href="#"><i class="fa fa-calculator"></i> Sector<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-trello fa-fw"></i> Sector<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="sector/create"><i class='fa fa-plus fa-fw'></i> Agregar</a>
+                                    <li>
+
+                                    <a href="#create"><i class='fa fa-pencil fa-fw'></i> Agregar</a>
+                                
                                 </li>
                                 <li>
-                                    <a href="sector"><i class="fa fa-ellipsis-v"></i> Sectores</a>
+                                    <a href="#list"><i class='fa fa-list fa-fw'></i> Sectores</a>
                                 </li>
                             </ul>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-folder-o"></i> Grupo<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-th-large fa-fw"></i> Grupo<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="grupo/create"><i class='fa fa-plus fa-fw'></i> Agregar</a>
+                                    <a href="grupo/create"><i class='fa fa-pencil fa-fw'></i> Agregar</a>
                                 </li>
                                 <li>
-                                    <a href="grupo"><i class='fa fa-list-ol fa-fw'></i> Grupos</a>
+                                    <a href="grupo"><i class='fa fa-list fa-fw'></i> Grupos</a>
                                 </li>
                             </ul>
                         </li>
 
                         <li>
-                            <a href="#"><i class="fa fa-briefcase"></i> Luminaria<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-chain-broken fa-fw"></i> Luminaria<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="/luminaria/create"><i class='fa fa-plus fa-fw'></i> Agregar</a>
+                                    <a href="/luminaria/create"><i class='fa fa-pencil fa-fw'></i> Agregar</a>
                                 </li>
                                 <li>
-                                    <a href="luminaria"><i class='fa fa-list-ol fa-fw'></i> Luminarias</a>
+                                    <a href="luminaria"><i class='fa fa-list fa-fw'></i> Luminarias</a>
                                 </li>
                             </ul>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-folder-o"></i> Lámpara<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-lightbulb-o fa-fw"></i> Lámpara<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="lampara/create"><i class='fa fa-plus fa-fw'></i> Agregar</a>
+                                    <a href="lampara/create"><i class='fa fa-pencil fa-fw'></i> Agregar</a>
                                 </li>
                                 <li>
-                                    <a href="lampara"><i class='fa fa-list-ol fa-fw'></i> Lámparas</a>
+                                    <a href="lampara"><i class='fa fa-list fa-fw'></i> Lámparas</a>
                                 </li>
                             </ul>
                         </li>
@@ -134,7 +135,7 @@
 <script src="../bower_components/velocity/velocity.js"></script>
 <script src="../bower_components/moment/min/moment-with-locales.js"></script>
 <script src="../bower_components/angular/angular.js"></script>
-<script src="../bower_components/lumx/dist/lumx.js"></script>
+
 
   
  
