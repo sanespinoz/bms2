@@ -60,46 +60,10 @@ dreamsControllers.controller('AppCtrl', ['$scope', 'Log', 'Logout',
                 }
             );
         };
+  }]);
+       
 
-        /* Edit Dream */
-        $scope.edit = function (id, index) {
-            $scope.errorContent = null;
-            $scope.id = $scope.data[index].id;
-            $scope.content = $scope.data[index].content;
-            $scope.index = index;
-            $('#myModal').modal();
-        };
-
-        /* Destroy Dream  */
-        $scope.destroy = function (id) {
-            if (confirm("Really delete this dream ?"))
-            {
-                Dream.delete({id: id},
-                    function success() {
-                        $scope.paginate();
-                    },
-                    function error(errorResponse) {
-                        console.log("Error:" + JSON.stringify(errorResponse));
-                    }
-                );
-            }
-        };
-
-        /* Update Dream */
-        $scope.submitChange = function () {
-            $scope.errorContent = null;
-            Dream.update({id: $scope.id}, {content: $scope.content},
-                function success(response) {
-                    $scope.data[$scope.index].content = $scope.content;
-                    $('#myModal').modal('hide');
-                },
-                function error(errorResponse) {
-                    $scope.errorContent = errorResponse.data.content[0];
-                }
-            );
-        };
-
-    }]);
+   
 
 dreamsControllers.controller('LoginCtrl', ['$scope', 'Login',
     function LoginCtrl($scope, Login) {
@@ -133,31 +97,14 @@ dreamsControllers.controller('LoginCtrl', ['$scope', 'Login',
 
     }]);
 
-dreamsControllers.controller('DreamCtrl', ['$scope', 'Dream',
-    function DreamCtrl($scope, Dream) {
 
-        /* Create Dream */
-        $scope.submitCreate = function () {
-            $scope.errorCreateContent = null;
-            Dream.save({}, $scope.formData,
-                function success(response) {
-                    $scope.formData.content = null;
-                    $scope.$parent.page = 1;
-                    $scope.$parent.data = response.data;
-                    $scope.$parent.previous = response.prev_page_url;
-                    $scope.$parent.next = response.next_page_url;
-                    window.location = '#dreams';
-                },
-                function error(errorResponse) {
-                    $scope.errorCreateContent = errorResponse.data.content[0];
-                }
-            );
-        };
 
-    }]);
-
-dreamsControllers.controller("pisoCtrl", function pisoCtrl($scope, $http, Piso) {
-  // $scope.msg = "I love London";
+dreamsControllers.controller("pisoCtrl", ['$scope', '$routeParams','$http', 'Piso', '$location', 
+    function pisoCtrl($scope, $routeParams, $http, Piso, $location) {
+ 
+    $scope.isAlertcreate = false;
+     $scope.isAlertdelete = false;
+      $scope.isAlertedit = false;
     Piso.get().success(function(response){
       
        $scope.data = response.data;
@@ -165,7 +112,7 @@ dreamsControllers.controller("pisoCtrl", function pisoCtrl($scope, $http, Piso) 
     });
 
 
-        $scope.submitCreate = function() {
+ $scope.submitCreate = function() {
        
 
         // save the comment. pass in comment data from the form
@@ -174,10 +121,10 @@ dreamsControllers.controller("pisoCtrl", function pisoCtrl($scope, $http, Piso) 
             .success(function(data) {
 
                        //Mensaje de se guardo
-                       console.log('Piso guardado');
+                      // console.log('Piso guardado');
                   
             $scope.pisoData = {};
-
+            $location.path('list');
 
             })
             .error(function(data) {
@@ -188,8 +135,20 @@ dreamsControllers.controller("pisoCtrl", function pisoCtrl($scope, $http, Piso) 
                         $scope.errorDescripcion = errorResponse.data.descripcion[0];
                     }
             });
+};
+//Crear un nuevo método controller para recuperar una lista de articulos
+    $scope.find = function(){
+        //usar el método query de piso para enviar una petición GET apropiada
+             Piso.show($scope.id).success(function(response){
+      
+       $scope.piso = response;
+        //console.log("res:",data);
+    });
+
     };
 
+      
+       
       /* Edit Piso*/
         $scope.edit = function (id, index) {
             $scope.errorNombre = null;
@@ -199,7 +158,7 @@ dreamsControllers.controller("pisoCtrl", function pisoCtrl($scope, $http, Piso) 
             $scope.descripcion = $scope.data[index].descripcion;
             $scope.index = index;
           
-            $("#myModal").modal();
+            $("#myModal").modal("show");
         };
           /* Update Piso*/
         $scope.submitChange = function () {
@@ -211,12 +170,7 @@ dreamsControllers.controller("pisoCtrl", function pisoCtrl($scope, $http, Piso) 
                 function success(response) {
                     $scope.data[$scope.index].nombre = $scope.nombre;
                     $scope.data[$scope.index].descripcion = $scope.descripcion;
-                    
-                    Piso.get()
-                    .success(function(response){
-                        $scope.data = response.data;
-                        $("#myModal").modal("hide");
-                    });
+                
 
                 },
                function error(errorResponse) {
@@ -228,88 +182,25 @@ dreamsControllers.controller("pisoCtrl", function pisoCtrl($scope, $http, Piso) 
                     }
                 }
             );
-        };
 
-
-           $scope.destroy = function(id) {
-       
-                if (confirm("Desea eliminar el piso ?"))
+};
+   $scope.destroy = function (id,index) {
+            if (confirm("Deseas eliminar el piso?"))
             {
-        // use the function we created in our service
-                    Piso.delete(id,
-                        function success(data) {
+                Piso.delete(id,
+                    function success(response) {
+                        console.log(response);
 
-                // if successful, we'll need to refresh the piso list
-                $scope.get();
-        //console.log("res:",data);
-                      },
+                    },
                     function error(errorResponse) {
                         console.log("Error:" + JSON.stringify(errorResponse));
                     }
                 );
-            }
-        };
-
-});
-
-
-
-
- dreamsControllers.controller('PisoDetailCtrl', ['$routeParams',
-  function($routeParams) {
-    this.pisoId = $routeParams.pisoId;
-}]);
-     /*            
- Delete Piso
-           
-
-*/
-
-
-        /*
-           $scope.destroy = function(id) {
-     
-                if (confirm("Desea eliminar el piso ?"))
-            {
-        // use the function we created in our service
-                    Piso.delete(id,
-                        function success(data) {
-
-                // if successful, we'll need to refresh the piso list
-                $scope.get();
-        //console.log("res:",data);
-                      },
-                    function error(errorResponse) {
-                        console.log("Error:" + JSON.stringify(errorResponse));
-                    }
-                );
-            }
-        };
-/////////////////
- $scope.eliminar = function() {
-                     $("#myModaldelete").modal();
-                    
             };
-       $scope.destroy = function(id) {
-     
-                if (confirm("Desea eliminar el piso?"))
-            {
-        // use the function we created in our service
-                    Piso.delete(id,
-                        function success(data) {
-
-                // if successful, we'll need to refresh the piso list
-                $scope.get();
-        //console.log("res:",data);
-                      },
-                    function error(errorResponse) {
-                        console.log("Error:" + JSON.stringify(errorResponse));
-                    }
-                );
-            }
+             $scope.data.splice(index,1);
+            
         };
-         */
-
+}]);
 
 
 

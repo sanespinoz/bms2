@@ -1,37 +1,38 @@
-<!-- Modal Pero uso el modal de pisos_list.html este no se usa -->
-<div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
+<!--La view editar piso-->
 
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Modificar datos></h4>
-      </div>
-          <form ng-submit="submitChange()" accept-charset="UTF-8" role="form">
-                            <div class="row">
+<section  ng-app="dreamsApp" ng-controller="pisoCtrl" init="edit(dataPiso.id)">
+   <h1 class="text-center">Modificar el Piso</h1>     
 
-                              <div class="form-group col-lg-12" ng-class="{'has-error': errorNombre}"></div>
+  <div ng-show="isLogged" >
+  
+          <form  ng-submit="submitChange(datPiso.id)" accept-charset="UTF-8" role="form" >
+                <div class="row">
+
+                    <div class="form-group " ng-class="{'has-error': errorNombre}"></div>
                                         
-                                        <input type="text" ng-model="nombre" class="form-control" name="nombre" id="nombre" required><small class="help-block">{{ errorNombre }}</small>
+                              <input type="text" ng-model="dataPiso.nombre" class="form-control" name="nombre" id="nombre" required><small class="help-block">{{ errorNombre }}</small>
 
-                                    <div class="form-group col-lg-12" ng-class="{'has-error': errorDescripcion}"></div>    
-                                    <textarea rows="8" ng-model="descripcion" class="form-control" name="descripcion" id="descripcion" required></textarea>
-                                    <small class="help-block">{{ errorDescripcion}}</small>
-                                </div>
+                    <div class="form-group " ng-class="{'has-error': errorDescripcion}"></div>    
+                              <textarea rows="8" ng-model="dataPiso.descripcion" class="form-control" name="descripcion" id="descripcion" required></textarea>
+                              <small class="help-block">{{ errorDescripcion}}</small>
+                    </div>
 
-                                <div class="modal-footer">                        
-                                    <button type="button" class="btn btn-default"type="submit"  data-dismiss="modal">Cerrar</button>
-                                    <input class="btn btn-default" type="submit" value="Guardar Cambios">
-                                </div> 
+                 <div>                        
+                             <button class="btn btn-default" type="submit"  >Cerrar</button>
+                              <input class="btn btn-default" type="submit" value="Guardar Cambios">
+                 </div> 
 
+                 <div ng-show="error">
+            <strong ng-bind="error"></strong>
+          </div>                 
                           
-                        </form>    
       
-    </div>
+  
+   
+  </form>  
 
   </div>
-</div>
+</section>
 
 
 

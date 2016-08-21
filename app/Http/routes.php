@@ -38,4 +38,4 @@ resource('lampara','LamparaController');
 
 Route::get('admin','FrontController@admin');
 //Route::get('london','FrontController@london');
-Route::resource('pisos', 'PisoController', ['only' => ['index', 'store', 'update', 'destroy']]);
+Route::resource('pisos', 'PisoController', ['only' => ['index', 'store', 'show','edit', 'update', 'destroy']]);

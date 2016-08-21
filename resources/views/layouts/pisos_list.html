@@ -1,18 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-    <!-- Head -->
-   
-</head>
-<body ng-app="dreamsApp" ng-controller="PisoCtrl">
-    
-
-
-<div class="table-responsive">
-  <h2>Pisos</h2>
+<!--La lista de pisos-->
+<section ng-app="dreamsApp" ng-controller="pisoCtrl">
+     
+    <h1>Pisos Registrados</h1>
         <p>Listado de los pisos existentes en el edificio</p>
+
+<div  class="table-responsive">
+ <!-- <div ng-show="isAlertcreate" class="alert alert-info" role="alert">
+                                   El piso fue creado
+                                   </div>
+      <div ng-show="isAlertdelete" class="alert alert-info" role="alert">
+                                   El piso fue eliminado
+                                </div>                           
+
+  -->
   <table class="table table-striped">
     <thead>
       <tr>
@@ -32,28 +32,34 @@
         <tbody>
           <tr ng-repeat= "piso in data">
                
-                <td>{{piso.nombre}}</td>
+                <td><a href="#view/{{piso.id}}" ng-bind="piso.nombre"></a></td>
                 
-                <td>{{piso.descripcion}}</td>
-              
-               <td>
-               <a class="btn btn-warning" ng-click="edit(piso.id, $index)" aria-label="Editar">
+                <td><p ng-bind="piso.descripcion"></p></td>
+                <td>
+<a class="btn btn-warning" ng-click="edit(piso.id, $index)" aria-label="Editar">
                   <i class="fa fa-pencil fa-fw " aria-hidden="true"></i>
-                </a>
-               <a class="btn btn-danger" ng-click="destroy(piso.id)" href>
+</a>
+                 <a class="btn btn-danger" ng-click="destroy(piso.id,$index)" href>
                             <i class="fa fa-fw fa-trash" aria-hidden="true"></i>     
 </a>
-              </td>
+                </td>
+               
           </tr>
+            <div ng-hide="!data || data.length">
+              Aún no hay pisos, Desea <a href="#create">crear uno</a>?
+            </div>
         </tbody>
+
     </table>
 </div>
+
 <!-- Modal Para Editar-->
+
 <div id="myModal" class="modal fade" role="dialog">
   <div class="modal-dialog">
 
     <!-- Modal content-->
-    <div class="modal-content">
+<div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title">Modificar los datos</h4>
@@ -61,6 +67,7 @@
 
       <div class="modal-body">
           <form ng-submit="submitChange(piso.id)" accept-charset="UTF-8" role="form">
+
                             <div class="row">
 
                               <div class="form-group" ng-class="{'has-error': errorNombre}"></div>
@@ -74,7 +81,7 @@
 
                                 <div class="modal-footer">                        
                                     <button type="button" class="btn btn-primary" type="submit"  data-dismiss="modal">Cerrar</button>
-                                    <input class="btn btn-success" type="submit" value="Guardar Cambios">
+                                    <input class="btn btn-success" type="submit" value="Actualizar">
                                 </div> 
 
                          
@@ -86,8 +93,9 @@
 </div>   
 </div>  
 </div>  
-    <!-- Modal para Eliminar-->
- <!-- Modal 
+
+    <!-- Modal para Eliminar
+
   <div id="myModaldelete" class="modal fade" role="dialog">
     <div class="modal-dialog modal-sm">
       <div class="modal-content">
@@ -105,11 +113,5 @@
     </div>
   </div>
 
- -->
-<script src="../bower_components/velocity/velocity.js"></script>
-
-<script src="../bower_components/angular/angular.js"></script>
-
-
-</body>
-</html>
+-->
+  </section>  

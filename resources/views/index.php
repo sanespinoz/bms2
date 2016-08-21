@@ -50,7 +50,7 @@
                         <li class="hidden">
                             <a href="#page-top"></a>
                         </li>
-                        <li>
+                        <li ng-show="isLogged">
                             <a class="page-scroll" href="#dreams">Luminarias</a>
                         </li>
                         <li ng-show="isLogged">
@@ -128,13 +128,13 @@
                                     </div>    
 
                                     <div class="col-lg-12 text-center">                 
-                                        <a href="password/email">Olvide mi contraseña !</a>
+                                        <a href="password/email">Olvide mi contraseña</a>
                                     </div>
                                 </div>
                             </form>                        
                             <div class="text-center">
                                 <br>
-                                <a href="auth/register" class="btn btn-default">Deseo suscribirme !</a>
+                                <a href="auth/register" class="btn btn-default">Deseo suscribirme</a>
                             </div>
                         </div>
 

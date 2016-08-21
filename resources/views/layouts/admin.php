@@ -20,7 +20,7 @@
 
 </head>
 
-<body  ng-controller='AppCtrl'>
+<body  id="page-top" ng-controller='AppCtrl'>
 
     <div id="wrapper">
 
@@ -33,21 +33,18 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href='/bms2/public/'>Inicio</a>
-            </div>
+                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                <li><a class="navbar-brand" href='/bms2/public/'>Inicio</a></li>
+                <li>
+                    <a ng-click="logout()" href='/bms2/public/'>
+                        Cerrar Sesión
+                    </a></li>
+                </ul>
            
 
-            <ul class="nav navbar-top-links navbar-right">
-                <!-- /.dropdown -->
-                <li class="dropdown">
-                    <a ng-click="logout()" href='/bms2/public/'>
-                        Logout
-                    </a>
-                   
-                    <!-- /.dropdown-user -->
-                </li>
-                <!-- /.dropdown -->
-            </ul>
+        </div>
+         </div>
             <!-- /.navbar-top-links -->
             <div class="navbar-default sidebar" role="navigation"  ng-controller='pisoCtrl'>
                 <div class="sidebar-nav navbar-collapse">
@@ -127,35 +124,35 @@
           
           <div ng-view></div>
         </div>
-
     </div>
+   
     
-<script src="../bower_components/jquery/dist/jquery.js"></script>
-<script src="assets/js/bootstrap.min.js"></script>
-<script src="../bower_components/velocity/velocity.js"></script>
-<script src="../bower_components/moment/min/moment-with-locales.js"></script>
-<script src="../bower_components/angular/angular.js"></script>
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="../bower_components/velocity/velocity.js"></script>
+    <script src="../bower_components/moment/min/moment-with-locales.js"></script>
+    <script src="../bower_components/angular/angular.js"></script>
 
 
-  
- 
+      
+     
     <script src="assets/js/metisMenu.min.js"></script>
 
     <!-- Custom Theme JavaScript -->
     <script src="assets/js/sb-admin-2.js"></script>
 
-   
+       
     <script src="https://raw.githubusercontent.com/Eonasdan/bootstrap-datetimepicker/master/build/js/bootstrap-datetimepicker.min.js"></script>
 
-<!-- Angular JavaScript -->
+    <!-- Angular JavaScript -->
 
-   
+       
 
-<!--<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>-->
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-resource.min.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-cookies.min.js"></script>
-<!-- Custom Angular JavaScript -->
+    <!--<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>-->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-resource.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-cookies.min.js"></script>
+    <!-- Custom Angular JavaScript -->
     <script src="js/app.js"></script>         
     <script src="js/controllers.js"></script> 
     <script src="js/services.js"></script>

@@ -104,10 +104,11 @@ class PisoController extends Controller
      */
     public function destroy($id)
     {
-        Piso::destroy($id);
+       if(Piso::destroy($id)) {
         // Session::flash('message','Piso Eliminado Correctamente');
          //return redirect('pisos');
          return response()->json(array('success' => true));
 
-    }
+    };
+}
 }
