@@ -3,7 +3,7 @@
      
     <h1>Pisos Registrados</h1>
         <p>Listado de los pisos existentes en el edificio</p>
-
+<!--<input type="text" ng-model="search" class="search-query" placeholder="Search">-->
 <div  class="table-responsive">
  <!-- <div ng-show="isAlertcreate" class="alert alert-info" role="alert">
                                    El piso fue creado
@@ -11,7 +11,6 @@
       <div ng-show="isAlertdelete" class="alert alert-info" role="alert">
                                    El piso fue eliminado
                                 </div>                           
-
   -->
   <table class="table table-striped">
     <thead>
@@ -30,7 +29,8 @@
         </thead>
  
         <tbody>
-          <tr ng-repeat= "piso in data">
+      <!--  | filter:search -->
+          <tr ng-repeat= "piso in data  | orderBy:nombre">
                
                 <td><a href="#view/{{piso.id}}" ng-bind="piso.nombre"></a></td>
                 
@@ -95,7 +95,6 @@
 </div>  
 
     <!-- Modal para Eliminar
-
   <div id="myModaldelete" class="modal fade" role="dialog">
     <div class="modal-dialog modal-sm">
       <div class="modal-content">
@@ -112,6 +111,5 @@
       </div>
     </div>
   </div>
-
 -->
-  </section>  
+</section>

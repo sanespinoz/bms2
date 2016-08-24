@@ -42,7 +42,6 @@ dreamsControllers.controller('AppCtrl', ['$scope', 'Log', 'Logout',
                 }
             );
         };
-
        Initial page 
         $scope.paginate();*/
 
@@ -120,7 +119,7 @@ dreamsControllers.controller("pisoCtrl", ['$scope', '$routeParams','$http', 'Pis
         Piso.save($scope.pisoData)
             .success(function(data) {
 
-                       //Mensaje de se guardo
+                console.log(data);       //Mensaje de se guardo
                       // console.log('Piso guardado');
                   
             $scope.pisoData = {};
@@ -128,6 +127,7 @@ dreamsControllers.controller("pisoCtrl", ['$scope', '$routeParams','$http', 'Pis
 
             })
             .error(function(data) {
+                console.log(data);
                 if (errorResponse.data.nombre) {
                         $scope.errorNombre = errorResponse.data.nombre[0];
                     }
@@ -137,15 +137,12 @@ dreamsControllers.controller("pisoCtrl", ['$scope', '$routeParams','$http', 'Pis
             });
 };
 //Crear un nuevo método controller para recuperar una lista de articulos
-    $scope.find = function(){
+    $scope.findOne = function(){
         //usar el método query de piso para enviar una petición GET apropiada
-             Piso.show($scope.id).success(function(response){
-      
-       $scope.piso = response;
+            $scope.piso = Piso.get($scope.piso.id);
+        };
         //console.log("res:",data);
-    });
-
-    };
+  
 
       
        
@@ -201,8 +198,3 @@ dreamsControllers.controller("pisoCtrl", ['$scope', '$routeParams','$http', 'Pis
             
         };
 }]);
-
-
-
-
-

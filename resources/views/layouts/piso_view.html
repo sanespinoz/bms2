@@ -1,14 +1,14 @@
 <!-- La view piso -->
 <section ng-app="dreamsApp" ng-controller="pisoCtrl" ng-init ="findOne()">
-	<h1 ng-bind="piso.nombre"></h1>
+	<h1 ng-bind={{nombre}}></h1>
 	<!-- Mostrar los botones de edición -->
 	<div ng-show="isLogged">
-		<a href="#edit/{{piso.id}}">Modificar</a>
-		<a href="#" ng-click="delete();">Eliminar</a>
+		<a href="#edit/{{id}}">Modificar</a>
+		<a href="#" ng-click="delete()">Eliminar</a>
 	</div>
 	<small>
-		<em ng-bind="piso.nombre"></em>
-		<p ng-bind="piso.descripcion"></p>
+		<em {{nombre}}></em>
+		<p {{descripcion}}></p>
 		
 	</small>
 </section>

@@ -20,13 +20,7 @@ class PisoController extends Controller
      */
     public function index()
     {
-      //$pisos = Piso::orderBy('nombre', 'asc')->paginate();
-
-     //return view('pisos.index', compact('pisos'));
-   
-     //return $pisos->toJson();
-    // return Response::json($pisos);
-    return response()->json(Piso::orderBy('nombre', 'asc')->paginate());
+    return response()->json(Piso::orderBy('nombre', 'asc')->paginate(4));
     }
 
     /**
