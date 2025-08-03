@@ -1,27 +1,54 @@
-## Laravel PHP Framework
+# 🏢 BMS - Building Management System
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+Aplicación web dinámica desarrollada en **Laravel 5.1** para gestionar recursos de un edificio de oficinas.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+---
 
-Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+## ⚙️ Tecnologías
 
-## Official Documentation
+- Laravel 5.1
+- PHP
+- Bootstrap
+- jQuery
+- MySQL
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+---
 
-## Contributing
+## 🚀 Instalación
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+1. Cloná el repositorio y accedé a la carpeta del proyecto:
 
-## Security Vulnerabilities
+   ```bash
+   git clone https://github.com/sanespinoz/bms.git
+   cd bms
+   ```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+2. Instalá las dependencias con Composer:
 
-### License
+   ```bash
+   composer install
+   ```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+3. Copiá el archivo de entorno y agregá tus credenciales:
+
+   ```bash
+   cp .env.example .env
+   ```
+
+4. Generá la clave de la aplicación:
+
+   ```bash
+   php artisan key:generate
+   ```
+
+5. Iniciá el servidor local:
+
+   ```bash
+   php artisan serve
+   ```
+
+---
+
+## 📌 Licencia
+
+Este proyecto está bajo la licencia MIT.
